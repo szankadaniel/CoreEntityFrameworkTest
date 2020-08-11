@@ -15,7 +15,6 @@ namespace CoreEntityFrameworkTest.ConsoleApp
 
         public static void Main(string[] args)
         {
-            new CatalogContext().Database.Migrate();
             //ConfigureServices();
             //Configure();
         }
@@ -28,6 +27,9 @@ namespace CoreEntityFrameworkTest.ConsoleApp
             ServiceProvider = ServiceCollection.BuildServiceProvider();
         }
 
+        /**
+         * Csak akkor fut le, ha nulláról akarok egy db-t felhúzni. 
+         */
         private static void Configure()
         {
             ServiceProvider.GetService<CatalogContext>().Database.Migrate();
