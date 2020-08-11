@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreEntityFrameworkTest.ConsoleApp", "CoreEntityFrameworkTest.ConsoleApp\CoreEntityFrameworkTest.ConsoleApp.csproj", "{23CFF1A8-8DF8-42CF-9963-C002A7218C39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreEntityFrameworkTest.DAL", "CoreEntityFrameworkTest.DAL\CoreEntityFrameworkTest.DAL.csproj", "{E3BBDCD9-C071-4A23-99BB-B42F1304ED79}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23CFF1A8-8DF8-42CF-9963-C002A7218C39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23CFF1A8-8DF8-42CF-9963-C002A7218C39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23CFF1A8-8DF8-42CF-9963-C002A7218C39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23CFF1A8-8DF8-42CF-9963-C002A7218C39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3BBDCD9-C071-4A23-99BB-B42F1304ED79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3BBDCD9-C071-4A23-99BB-B42F1304ED79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3BBDCD9-C071-4A23-99BB-B42F1304ED79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3BBDCD9-C071-4A23-99BB-B42F1304ED79}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1EFA31D0-0FAA-43CA-BC84-307EC7FA5B2D}
+	EndGlobalSection
+EndGlobal
