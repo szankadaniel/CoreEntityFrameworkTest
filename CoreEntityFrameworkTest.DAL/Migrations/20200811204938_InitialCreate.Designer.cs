@@ -9,7 +9,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CoreEntityFrameworkTest.DAL.Migrations
 {
     [DbContext(typeof(CatalogContext))]
-    [Migration("20200811201517_InitialCreate")]
+    [Migration("20200811204938_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -19,6 +19,18 @@ namespace CoreEntityFrameworkTest.DAL.Migrations
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn)
                 .HasAnnotation("ProductVersion", "3.1.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
+
+            modelBuilder.Entity("CoreEntityFrameworkTest.DAL.CatalogBasket", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.HasKey("ID");
+
+                    b.ToTable("CatalogBaskets");
+                });
 
             modelBuilder.Entity("CoreEntityFrameworkTest.DAL.CatalogBrand", b =>
                 {
@@ -39,6 +51,9 @@ namespace CoreEntityFrameworkTest.DAL.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
                     b.HasKey("ID");
 
                     b.ToTable("CatalogItems");
@@ -50,6 +65,9 @@ namespace CoreEntityFrameworkTest.DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<bool>("IsFree")
+                        .HasColumnType("boolean");
 
                     b.HasKey("ID");
 

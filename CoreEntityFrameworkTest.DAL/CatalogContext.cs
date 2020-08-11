@@ -18,6 +18,8 @@ namespace CoreEntityFrameworkTest.DAL
 
         public DbSet<CatalogType> CatalogTypes { get; set; }
 
+        public DbSet<CatalogBasket> CatalogBaskets { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseNpgsql(@"Host=localhost;Database=Catalogs;Username=postgres;Password=123456");

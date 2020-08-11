@@ -8,6 +8,18 @@ namespace CoreEntityFrameworkTest.DAL.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "CatalogBaskets",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CatalogBaskets", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "CatalogBrands",
                 columns: table => new
                 {
@@ -24,7 +36,8 @@ namespace CoreEntityFrameworkTest.DAL.Migrations
                 columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Name = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -36,7 +49,8 @@ namespace CoreEntityFrameworkTest.DAL.Migrations
                 columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    IsFree = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -46,6 +60,9 @@ namespace CoreEntityFrameworkTest.DAL.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "CatalogBaskets");
+
             migrationBuilder.DropTable(
                 name: "CatalogBrands");
 

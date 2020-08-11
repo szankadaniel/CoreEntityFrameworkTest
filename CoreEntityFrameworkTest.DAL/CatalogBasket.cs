@@ -1,10 +1,15 @@
 ﻿namespace CoreEntityFrameworkTest.DAL
 {
-    public class CatalogType
+
+    public class CatalogBasket
     {
+
         public int ID { get; set; }
 
-        public bool IsFree { get; set; }
+        public CatalogBasket()
+        {
+
+        }
 
     }
 
