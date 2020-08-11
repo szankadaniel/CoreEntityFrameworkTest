@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Data.Common;
 
 namespace CoreEntityFrameworkTest.DAL
 {
@@ -6,8 +7,7 @@ namespace CoreEntityFrameworkTest.DAL
     public class CatalogContext : DbContext
     {
 
-        public CatalogContext(DbContextOptions<CatalogContext> options) 
-            : base(options)
+        public CatalogContext()
         {
 
         }
@@ -18,6 +18,26 @@ namespace CoreEntityFrameworkTest.DAL
 
         public DbSet<CatalogType> CatalogTypes { get; set; }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseNpgsql(@"Host=localhost;Database=Catalogs;Username=postgres;Password=123456");
+        }
+
     }
+
+    //public class BasePSqlDbContext : DbContext
+    //{
+
+    //    public BasePSqlDbContext()
+    //    {
+
+    //    }
+
+    //    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    //    {
+    //        optionsBuilder.UseNpgsql(@"Host=localhost;Database=Catalogs;Username=postgres;Password=123456");
+    //    }
+
+    //}
 
 }

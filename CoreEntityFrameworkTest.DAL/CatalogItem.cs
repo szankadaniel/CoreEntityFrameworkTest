@@ -3,6 +3,8 @@
     public class CatalogItem
     {
 
+        public int ID { get; set; }
+
     }
 
 }
