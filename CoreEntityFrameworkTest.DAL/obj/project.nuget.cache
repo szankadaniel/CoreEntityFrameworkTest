@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QirkaO1ptwcpc9sNIEi/j2qAd3XPkdGjWsPceuanaNIMzpPHL33wJIUMuXv4+Sv6UNnM3qpnNFQ0Lz/YBkuFaA==",
+  "dgSpecHash": "exSXxJJVG+HqCgAF5Mr9fyNMN/PWMbhBcwT/7AZv+w/cVpSdduuqbbqS+lr27FPcb9M/pamLTtxUj49BHV681Q==",
   "success": true,
   "projectFilePath": "D:\\PROJECTS\\github_szankadaniel\\Projects\\Production\\CoreEntityFrameworkTest.Console\\CoreEntityFrameworkTest.DAL\\CoreEntityFrameworkTest.DAL.csproj",
   "expectedPackageFiles": [
@@ -31,8 +31,13 @@
     "C:\\Users\\Sylvanor\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.7\\microsoft.extensions.configuration.3.1.7.nupkg.sha512",
     "C:\\Users\\Sylvanor\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.7\\microsoft.extensions.configuration.abstractions.3.1.7.nupkg.sha512",
     "C:\\Users\\Sylvanor\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.1.7\\microsoft.extensions.configuration.binder.3.1.7.nupkg.sha512",
+    "C:\\Users\\Sylvanor\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\3.1.7\\microsoft.extensions.configuration.fileextensions.3.1.7.nupkg.sha512",
+    "C:\\Users\\Sylvanor\\.nuget\\packages\\microsoft.extensions.configuration.json\\3.1.7\\microsoft.extensions.configuration.json.3.1.7.nupkg.sha512",
     "C:\\Users\\Sylvanor\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.7\\microsoft.extensions.dependencyinjection.3.1.7.nupkg.sha512",
     "C:\\Users\\Sylvanor\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.7\\microsoft.extensions.dependencyinjection.abstractions.3.1.7.nupkg.sha512",
+    "C:\\Users\\Sylvanor\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\3.1.7\\microsoft.extensions.fileproviders.abstractions.3.1.7.nupkg.sha512",
+    "C:\\Users\\Sylvanor\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\3.1.7\\microsoft.extensions.fileproviders.physical.3.1.7.nupkg.sha512",
+    "C:\\Users\\Sylvanor\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\3.1.7\\microsoft.extensions.filesystemglobbing.3.1.7.nupkg.sha512",
     "C:\\Users\\Sylvanor\\.nuget\\packages\\microsoft.extensions.logging\\3.1.7\\microsoft.extensions.logging.3.1.7.nupkg.sha512",
     "C:\\Users\\Sylvanor\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.7\\microsoft.extensions.logging.abstractions.3.1.7.nupkg.sha512",
     "C:\\Users\\Sylvanor\\.nuget\\packages\\microsoft.extensions.options\\3.1.7\\microsoft.extensions.options.3.1.7.nupkg.sha512",
