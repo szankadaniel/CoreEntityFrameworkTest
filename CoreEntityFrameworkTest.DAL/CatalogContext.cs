@@ -19,6 +19,14 @@ namespace CoreEntityFrameworkTest.DAL
 
         public DbSet<CatalogBasket> CatalogBaskets { get; set; }
 
+        //public DbSet<CatalogBrandsAndCatalogItems> CatalogBrandsAndCatalogItems { get; set; }
+
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<CatalogBrandsAndCatalogItems>().HasNoKey();
+        //    base.OnModelCreating(modelBuilder);
+        //}
+
     }
 
 }

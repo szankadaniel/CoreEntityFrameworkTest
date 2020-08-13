@@ -1,4 +1,5 @@
 ﻿using CoreEntityFrameworkTest.DAL;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace CoreEntityFrameworkTest.ConsoleApp
@@ -11,30 +12,51 @@ namespace CoreEntityFrameworkTest.ConsoleApp
             CatalogContext catalogContext = new CatalogContext();
 
             /* CREATE */
-            CatalogBrand newBrand = new CatalogBrand() { Name = "Nev", Description = "Desc", Enabled = true };
-            catalogContext.CatalogBrands.Add(newBrand);
-            catalogContext.SaveChanges();
+            //CatalogBrand newBrand = new CatalogBrand() { Name = "Nev", Description = "Desc", Enabled = true };
+            //catalogContext.CatalogBrands.Add(newBrand);
+            //catalogContext.SaveChanges();
 
             /* UPDATE */
-            CatalogBrand brand = catalogContext.CatalogBrands.Find(3);
-            brand.Enabled = true;
-            catalogContext.SaveChanges();
+            //CatalogBrand brand = catalogContext.CatalogBrands.Find(3);
+            //brand.Enabled = true;
+            //catalogContext.SaveChanges();
 
             /* GET */
             /* Add the call to ToListAsync in order to execute the query immediately. Otherwise, the statement will assign an IQueryable<SelectListItem> to brandItems, which will not be executed until it is enumerated. */
             var items = catalogContext.CatalogBrands
                 .Where(b => b.Enabled == true)
-                .OrderByDescending(b => b.ID)
                 .ToList();
 
             /* CREATE THEN DELETE */
-            newBrand = new CatalogBrand() { Name = "delete", Description = "Desc", Enabled = true };
-            catalogContext.CatalogBrands.Add(newBrand);
+            //newBrand = new CatalogBrand() { Name = "delete", Description = "Desc", Enabled = true };
+            //catalogContext.CatalogBrands.Add(newBrand);
+            //catalogContext.SaveChanges();
+
+            //var brandToDelete = catalogContext.CatalogBrands.Where(b => b.Name == "delete");
+            //catalogContext.RemoveRange(brandToDelete);
+            //catalogContext.SaveChanges();
+
+
+            /* USING INCLUDE - one-to-many */
+            var itemsWithInclude = catalogContext.CatalogBrands
+                .Include(b => b.Items)
+                .Where(b => b.Items != null)
+                .ToList();
+
+            /* CASCADE DELETE */
+            CatalogBrand newBrand3 = new CatalogBrand() { ID = 3, Name = "Nev", Description = "Desc", Enabled = true };
+            catalogContext.CatalogBrands.Add(newBrand3);
             catalogContext.SaveChanges();
 
-            var brandToDelete = catalogContext.CatalogBrands.Where(b => b.Name == "delete");
-            catalogContext.RemoveRange(brandToDelete);
+            CatalogItem item = new CatalogItem { Name = "asdf", CatalogBrandId = 3 };
+            catalogContext.CatalogItems.Add(item);
             catalogContext.SaveChanges();
+
+            CatalogBrand catalogBrand_3 = catalogContext.CatalogBrands.Find(3);
+            catalogContext.CatalogBrands.Remove(catalogBrand_3);
+            catalogContext.SaveChanges();
+
+
         }
 
     }
