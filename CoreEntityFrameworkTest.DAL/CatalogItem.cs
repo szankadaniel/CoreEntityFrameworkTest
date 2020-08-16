@@ -24,6 +24,8 @@
         /// </remarks>
         public CatalogBrand CatalogBrand { get; set; }
 
+        public CatalogType CatalogType { get; set; }
+
     }
 
 }

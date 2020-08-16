@@ -19,13 +19,19 @@ namespace CoreEntityFrameworkTest.DAL
 
         public DbSet<CatalogBasket> CatalogBaskets { get; set; }
 
-        //public DbSet<CatalogBrandsAndCatalogItems> CatalogBrandsAndCatalogItems { get; set; }
+        public DbSet<Product> Products { get; set; }
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<CatalogBrandsAndCatalogItems>().HasNoKey();
-        //    base.OnModelCreating(modelBuilder);
-        //}
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            /* If we configure the relation here manually, then the foreign key property is not required. */
+            modelBuilder.Entity<Product>()
+                .HasOne(p => p.CatalogBaskets)
+                .WithMany(b => b.Products);
+
+            /* Single navigation property */
+            modelBuilder.Entity<CatalogItem>()
+                .HasOne(ci => ci.CatalogType);
+        }
 
     }
 
