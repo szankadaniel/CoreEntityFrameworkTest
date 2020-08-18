@@ -11,6 +11,7 @@ namespace CoreEntityFrameworkTest.ConsoleApp
         public static void Main(string[] args)
         {
             CatalogContext catalogContext = new CatalogContext();
+            catalogContext.Database.Migrate();
 
             /* CREATE */
             //CatalogBrand newBrand = new CatalogBrand() { Name = "Nev", Description = "Desc", Enabled = true };

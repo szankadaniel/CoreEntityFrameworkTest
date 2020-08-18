@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoreEntityFrameworkTest.DAL
 {
 
+    [Table("CatalogBasket", Schema = "dbo")]
     public class CatalogBasket
     {
 

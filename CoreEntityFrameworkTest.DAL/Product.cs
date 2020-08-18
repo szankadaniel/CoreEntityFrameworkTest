@@ -1,6 +1,9 @@
-﻿namespace CoreEntityFrameworkTest.DAL
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace CoreEntityFrameworkTest.DAL
 {
 
+    [Table("Product", Schema = "dbo")]
     public class Product
     {
 

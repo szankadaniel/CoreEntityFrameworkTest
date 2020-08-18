@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoreEntityFrameworkTest.DAL
 {
@@ -6,6 +7,7 @@ namespace CoreEntityFrameworkTest.DAL
     /// <summary>
     /// Principal Entity
     /// </summary>
+    [Table("CatalogBrand", Schema = "dbo")]
     public class CatalogBrand
     {
 

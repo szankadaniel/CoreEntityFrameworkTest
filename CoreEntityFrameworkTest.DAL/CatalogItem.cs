@@ -1,9 +1,12 @@
-﻿namespace CoreEntityFrameworkTest.DAL
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace CoreEntityFrameworkTest.DAL
 {
 
     /// <summary>
     /// This is the Dependent entity
     /// </summary>
+    [Table("CatalogItem", Schema = "dbo")]
     public class CatalogItem
     {
 
