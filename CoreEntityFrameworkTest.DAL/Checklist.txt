@@ -1,0 +1,2 @@
+﻿- A DataBase.Migrate() exception-re fut, ha egy tábla már létezik az adatbázisban. 
+	Valami más megoldás kell, mert ez csak akkor jó, ha nulláról akarjuk felhúzni. 

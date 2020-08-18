@@ -5,13 +5,36 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\temp_old\20200818200014_testmigration.cs" />
+    <Compile Remove="Migrations\temp_old\20200818200014_testmigration.Designer.cs" />
+    <Compile Remove="Migrations\temp_old\20200818203309_testmigration2.cs" />
+    <Compile Remove="Migrations\temp_old\20200818203309_testmigration2.Designer.cs" />
+    <Compile Remove="Migrations\temp_old\20200818203724_testmigration3.cs" />
+    <Compile Remove="Migrations\temp_old\20200818203724_testmigration3.Designer.cs" />
+    <Compile Remove="Migrations\temp_old\CatalogContextModelSnapshot.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="3.1.7" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.7" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.4" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Data\" />
+    <Folder Include="Migrations\temp_new\" />
+    <Folder Include="Migrations\temp_old\" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,25 @@
+﻿1. Hozzuk létre a modellt C#-ban.
+	- Legyen egy class, ami a DbContext-et örökli.
+	- Hozzuk létre a tábláknak megfelelő osztályokat.
+	- A DbContext osztályunkban hozzunk létre egy-egy DbSet<TableType> property-t.
+	!!!! Egy projektben nem szerepelhet több osztály, ami örökölné a DbContext-et. 
+2. A Package Manager Console-ban válasszuk ki a projektet, ahol a sémát leíró osztályok találhatóak.
+	- Ahhoz, hogy a migrációt PMC-ből tudjuk futtatni, hozzá kell adjuk a projekthez a Microsoft.EntityFrameworkCore.Tools csomagot.
+3. Futtassuk le a következő parancsot PMC-ben: Add-Migration EgyediNev
+	- Elképzelhető, hogy további nuget csomagok telepítését is kérni fogja a projekthez. Ezeket adjuk hozzá és ezt követően futtassuk újra a parancsot.
+	- A futtatás hatására megjelenik egy Migrations projekt. 
+4. Futtassok le a következő parancsot PMC-ben: Update-Database
+(4. Az alkalmazásunk Startup osztályába tegyük be a következő kódot: new CustomDbContext().Database.Migration();
+	- Ha DI-t használunk és nem akarjuk direktben hívni a konstruktort, 
+		akkor a service provider-ből szedjük ki a megfelelő objektumot: serviceProvider.GetService<CustomDbContext>().Database.Migration();)
+
+
+- A migrations folder-ben van egy CatalogContextModelSnapshot.cs fájl. Ebbe mindig bekerül az utoljára generált migration.Designer.cs tartalma. (Séma, data seed, minden.)
+- Az Add-Migration mindig ezt a Snapshot fájlt használja az új fájl generálásához, nem a kirakott db-t,  és nem is a megelőző migration fájlokat. 
+- pl. ha a Snapshot tök üres, akkor a generált migration fájl egy clean install fájl lesz (a korábbi mig fájlok nem számítanak). 
+- Az update-database -hez viszont tényleg a migration fájl kell, de csak az utolsó, ami még nem volt futtatva az EFMigration alapján. 
+- Elméletben a régebbi mig fájlok törölhetők is, mert sem az uj migrációs fájlhoz, sem a db update-hez nem kellenek. (Biztonság kedvéért azért nem árthat x ideig megtartani, ha vissza kell állni korábbi verzióra.)
+
+Frissítés:
+1. A Migrations folder tartalmát törölhetjük.
+2. Futtassuk le újra mindkét parancsot egymás után.
